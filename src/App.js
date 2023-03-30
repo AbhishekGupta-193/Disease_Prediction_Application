@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Diabetes from './components/diabetes.js'
+import Heart from './components/heart.js'
+import Parkinsons from './components/parkinsons.js'
+import { useState } from "react"
 
 function App() {
+  const [page, setPage] = useState("diabetes");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='root'>
+
+      <nav className='root1'>
+        <ul>
+          <li>
+            <button onClick={() => setPage('diabetes')} value="diabetes">
+              Diabetes Prediction
+            </button>
+          </li>
+          <li>
+            <button onClick={() => setPage('heart')} value="heart">
+              Heart disease Prediction
+            </button>
+          </li>
+          <li>
+            <button onClick={() => setPage('parkinsons')} value="parkinsons">
+              Parkinsons Prediction
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <main className='root2'>
+        <div>
+          {page === "diabetes" && <Diabetes />}
+          {page === "heart" && <Heart />}
+          {page === "parkinsons" && <Parkinsons />}
+        </div>
+      </main>
+
     </div>
   );
 }
