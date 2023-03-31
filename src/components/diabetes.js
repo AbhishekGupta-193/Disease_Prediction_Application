@@ -16,29 +16,36 @@ function Diabetes() {
         dofv: "",
         age: ""
     })
-
+const [result, setResult] = useState("")
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name, value);
+        // console.log(name, value);
         setUser({
             ...user,
             [name]: value
         })
     }
 
-    const submit = () => {
+    const submit = async() => {
         const { preg, gl, bp, skv, il, bmi, dofv, age } = user
-        if (preg && gl && bp && skv && il && bmi && dofv && age) {
-            axios.post("http://localhost:8000/", user)
-                .then(res => alert(res.data.message));
-            redirect('http://localhost:8000/');
-        }
-        else {
-            alert("No feild should be empty");
-        }
+        const url="http://127.0.0.1:5000/predict"
+        const res=await axios.post(url,user)
+        const data=res.data;
+        setResult(data);
+
+
+        // if (preg && gl && bp && skv && il && bmi && dofv && age) {
+        //     axios.post("http://localhost:8000/", user)
+        //         .then(res => alert(res.data.message));
+        //     redirect('http://localhost:8000/');
+        // }
+        // else {
+        //     alert("No feild should be empty");
+        // }
     }
 
     return (
+        <>
         <div className="main-home">
 
             <label class="custom-field two">
@@ -84,6 +91,15 @@ function Diabetes() {
             <button class="button" style={{ verticalAlign: "middle" }} onClick={submit}><span>Submit </span></button>
 
         </div >
+        <section>
+            <div className='result-header'>
+                    Predicted value
+            </div>
+            <div className='result'>
+                {result}
+            </div>
+        </section>
+        </>
     )
 }
 
