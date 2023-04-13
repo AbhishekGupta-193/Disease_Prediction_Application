@@ -1,0 +1,39 @@
+.sidebar-wrp{
+    width: 20rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 0.8rem;
+    background-color: #dadbdf;
+    .sidebar-cnt{
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 5rem;
+        padding: 0.7rem;
+        background:#fff;
+        gap: 0.3rem;
+        .sidebar {
+            border-radius: 8px;
+            display: flex;
+            gap: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+                background-color: tomato;
+                color: #fff;
+            }
+            &:nth-child(1){
+                background-color: #fff;
+                color: #000;
+                border-bottom: 2px solid grey;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+                margin-bottom: 0.5rem;
+            }
+            padding: 0.9rem;
+            cursor: pointer;
+        }
+
+    }
+}

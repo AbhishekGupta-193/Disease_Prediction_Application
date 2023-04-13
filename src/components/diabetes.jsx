@@ -4,7 +4,7 @@ import axios from 'axios'
 // import { useNavigate } from 'react-router-dom';
 import { redirect } from "react-router-dom";
 
-function Heart() {
+function Diabetes() {
     // const navigate = useNavigate();
     const [user, setUser] = useState({
         preg: "",
@@ -16,7 +16,7 @@ function Heart() {
         dofv: "",
         age: ""
     })
-const [result, setResult] = useState("")
+const [result, setResult] = useState("You will get ans here")
     const handleChange = (e) => {
         const { name, value } = e.target;
         // console.log(name, value);
@@ -45,8 +45,44 @@ const [result, setResult] = useState("")
     }
 
     return (
-        <>
-        <div className="main-home">
+        <div className='diabetes-wrp'>
+            <h1>Diabetes prediction using ML</h1>
+            <div className="heart-form">
+                <div className="form-control">
+                    <span>Number of Pregnancies</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Glocose Level</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Blood Pressure Level</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Skin Thickness Value</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Insulin Level</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>BMI value</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Diabetes Oedigree Function value</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Age of Person</span>
+                    <input type="number" />
+                </div>
+            </div>
+            <button className='heart-submit'> Diabetes test Result</button>
+        {/* <div className="main-home">
 
             <label class="custom-field two">
                 <input type="number" name="preg" value={user.preg} onChange={handleChange} placeholder="&nbsp;" />
@@ -91,16 +127,16 @@ const [result, setResult] = useState("")
             <button class="button" style={{ verticalAlign: "middle" }} onClick={submit}><span>Submit </span></button>
 
         </div >
-        <section>
+        <section className='result-main'> 
             <div className='result-header'>
-                    Predicted value
+                    Predicted value =
             </div>
             <div className='result'>
                 {result}
             </div>
-        </section>
-        </>
+        </section> */}
+        </div>
     )
 }
 
-export default Heart
+export default Diabetes

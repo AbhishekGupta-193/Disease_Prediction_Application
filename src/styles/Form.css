@@ -1,0 +1,50 @@
+.form-main-wrp {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 1rem;
+}
+
+.heart-wrp, .diabetes-wrp, .parkinson-wrp {
+  max-width: 65vw;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.heart-wrp h1, .diabetes-wrp h1, .parkinson-wrp h1 {
+  margin: auto;
+}
+.heart-wrp .heart-form, .diabetes-wrp .heart-form, .parkinson-wrp .heart-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.heart-wrp .heart-form .form-control, .diabetes-wrp .heart-form .form-control, .parkinson-wrp .heart-form .form-control {
+  width: 20rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.heart-wrp .heart-form .form-control input, .diabetes-wrp .heart-form .form-control input, .parkinson-wrp .heart-form .form-control input {
+  padding: 0.7rem;
+  border: none;
+  outline: none;
+  background: #f1f2f6;
+  border-radius: 5px;
+}
+.heart-wrp .heart-submit, .diabetes-wrp .heart-submit, .parkinson-wrp .heart-submit {
+  padding: 0.7rem;
+  background: #fff;
+  border: 1px solid #b4b2b3;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.heart-wrp .heart-submit:hover, .diabetes-wrp .heart-submit:hover, .parkinson-wrp .heart-submit:hover {
+  background: tomato;
+  color: #fff;
+}/*# sourceMappingURL=Form.css.map */

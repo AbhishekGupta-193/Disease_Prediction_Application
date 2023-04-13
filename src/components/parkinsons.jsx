@@ -45,8 +45,92 @@ const [result, setResult] = useState("")
     }
 
     return (
-        <>
-        <div className="main-home">
+        <div className='parkinson-wrp'>
+            <h1>Parkinson's disease prediction using ML</h1>
+              <div className="heart-form">
+                <div className="form-control">
+                    <span>MDVP:Fo(Hz)</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>MDVP:Fhi(Hz)</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>MDVP:Flo(Hz)</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>MDVP:jitter(%)</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>MDVP:jitter(Abs)</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>MDVP:RAP</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>MDVP:PPQ</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>MDVP:Shimmer</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Shimmer:APQ3</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Shimmer:APQ5</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>MDVP:APQ</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Shimmer:DDA</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>NHR</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>HNR</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>RPDE</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>DFA</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Spread1</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Spread2</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>D2</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>PPE</span>
+                    <input type="number" />
+                </div>
+            </div>
+            <button className='heart-submit'>Parkinson's disease test Result</button>
+        {/* <div className="main-home">
 
             <label class="custom-field two">
                 <input type="number" name="preg" value={user.preg} onChange={handleChange} placeholder="&nbsp;" />
@@ -98,8 +182,8 @@ const [result, setResult] = useState("")
             <div className='result'>
                 {result}
             </div>
-        </section>
-        </>
+        </section> */}
+        </div>
     )
 }
 

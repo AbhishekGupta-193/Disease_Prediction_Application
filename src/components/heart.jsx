@@ -3,8 +3,7 @@ import './diabetes.css'
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom';
 import { redirect } from "react-router-dom";
-
-function Diabetes() {
+function Heart() {
     // const navigate = useNavigate();
     const [user, setUser] = useState({
         preg: "",
@@ -16,7 +15,7 @@ function Diabetes() {
         dofv: "",
         age: ""
     })
-const [result, setResult] = useState("You will get ans here")
+const [result, setResult] = useState("")
     const handleChange = (e) => {
         const { name, value } = e.target;
         // console.log(name, value);
@@ -45,8 +44,65 @@ const [result, setResult] = useState("You will get ans here")
     }
 
     return (
-        <>
-        <div className="main-home">
+        <div className='heart-wrp'>
+            <h1>Heart Disease Prediction Using ML</h1>
+            <div className="heart-form">
+                <div className="form-control">
+                    <span>Age</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Sex</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Chest pain type</span>
+                    <input type="text" />
+                </div>
+                <div className="form-control">
+                    <span>Resting blood pressure</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Serum Cholestoral in mg/dl</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Fasting Blood Sugar `{'>'}` 120mg/dl</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Resting Electrocardiographic results</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Maximum heart rate achieved</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Exercise induced Angina</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>ST depression induced by exercise </span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Slope of the peak exercise ST segment</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Major vessels colored by flourosopy</span>
+                    <input type="number" />
+                </div>
+                <div className="form-control">
+                    <span>Thal:0=normal;1=fixed;2=reversable defect</span>
+                    <input type="number" />
+                </div>
+            </div>
+            <button className='heart-submit'>Heart Disease test Result</button>
+
+        {/* <div className="main-home">
 
             <label class="custom-field two">
                 <input type="number" name="preg" value={user.preg} onChange={handleChange} placeholder="&nbsp;" />
@@ -91,16 +147,16 @@ const [result, setResult] = useState("You will get ans here")
             <button class="button" style={{ verticalAlign: "middle" }} onClick={submit}><span>Submit </span></button>
 
         </div >
-        <section className='result-main'> 
+        <section>
             <div className='result-header'>
-                    Predicted value =
+                    Predicted value
             </div>
             <div className='result'>
                 {result}
             </div>
-        </section>
-        </>
+        </section> */}
+        </div>
     )
 }
 
-export default Diabetes
+export default Heart
