@@ -16,7 +16,7 @@ function Diabetes() {
         dofv: "",
         age: ""
     })
-const [result, setResult] = useState("")
+const [result, setResult] = useState("You will get ans here")
     const handleChange = (e) => {
         const { name, value } = e.target;
         // console.log(name, value);
@@ -91,9 +91,9 @@ const [result, setResult] = useState("")
             <button class="button" style={{ verticalAlign: "middle" }} onClick={submit}><span>Submit </span></button>
 
         </div >
-        <section>
+        <section className='result-main'> 
             <div className='result-header'>
-                    Predicted value
+                    Predicted value =
             </div>
             <div className='result'>
                 {result}
