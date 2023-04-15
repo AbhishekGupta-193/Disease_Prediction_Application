@@ -29,7 +29,7 @@ function Heart() {
 
     const submit = async () => {
        console.log(typeof user['age'])
-        const url = " http://10.223.85.88:5000/predict2"
+        const url = "https://flask-server-xnv0.onrender.com/predict2"
         const res = await axios.post(url, user)
         const data = res.data;
         setResult(data);

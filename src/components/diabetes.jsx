@@ -24,7 +24,7 @@ function Diabetes() {
     }
 
     const submit = async () => {
-        const url = " http://10.223.85.88:5000/predict1"
+        const url = "https://flask-server-xnv0.onrender.com/predict1"
         const res = await axios.post(url, user)
         const data = res.data;
         setResult(data);
