@@ -29,7 +29,7 @@ function Heart() {
 
     const submit = async () => {
        console.log(typeof user['age'])
-        const url = "http://127.0.0.1:5000/predict2"
+        const url = " http://10.223.85.88:5000/predict2"
         const res = await axios.post(url, user)
         const data = res.data;
         setResult(data);

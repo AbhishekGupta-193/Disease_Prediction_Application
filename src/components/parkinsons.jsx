@@ -39,7 +39,7 @@ function Parkinsons() {
     }
 
     const submit = async () => {
-        const url = "http://127.0.0.1:5000/predict3"
+        const url = "http://10.223.85.88:5000/predict3"
         const res = await axios.post(url, user)
         const data = res.data;
         setResult(data);
