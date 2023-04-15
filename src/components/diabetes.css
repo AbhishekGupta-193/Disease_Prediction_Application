@@ -126,4 +126,17 @@
       right: 0;
   }
 
-  
+  .Note{
+      display: inline-block;
+      border-radius: 11px;
+      background-color: #f4511e;
+      border: none;
+      color: #FFFFFF;
+      /* text-align: center; */
+      font-size: 15px;
+      padding: 12px;
+      /* width: 200px; */
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 5px;
+  }

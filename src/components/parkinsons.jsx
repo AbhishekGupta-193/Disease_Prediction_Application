@@ -1,188 +1,194 @@
 import React, { useState } from 'react';
 import './diabetes.css'
 import axios from 'axios'
-// import { useNavigate } from 'react-router-dom';
 import { redirect } from "react-router-dom";
 
 function Parkinsons() {
-    // const navigate = useNavigate();
     const [user, setUser] = useState({
-        preg: "",
-        gl: "",
-        bp: "",
-        skv: "",
-        il: "",
-        bmi: "",
-        dofv: "",
-        age: ""
+        m1: "",
+        m2: "",
+        m3: "",
+        m4: "",
+        m5: "",
+        m6: "",
+        m7: "",
+        jd: "",
+        m8: "",
+        m9: "",
+        sa3: "",
+        sa5: "",
+        m10: "",
+        sd: "",
+        nhr: "",
+        hnr: "",
+        rpde: "",
+        dfa: "",
+        s1: "",
+        s2: "",
+        d2: "",
+        ppe:""
+
     })
-const [result, setResult] = useState("")
+    const [result, setResult] = useState("You will get ans3 here")
     const handleChange = (e) => {
         const { name, value } = e.target;
-        // console.log(name, value);
         setUser({
             ...user,
             [name]: value
         })
     }
 
-    const submit = async() => {
-        const { preg, gl, bp, skv, il, bmi, dofv, age } = user
-        const url="http://127.0.0.1:5000/predict"
-        const res=await axios.post(url,user)
-        const data=res.data;
+    const submit = async () => {
+        const url = "http://127.0.0.1:5000/predict3"
+        const res = await axios.post(url, user)
+        const data = res.data;
         setResult(data);
 
-
-        // if (preg && gl && bp && skv && il && bmi && dofv && age) {
-        //     axios.post("http://localhost:8000/", user)
-        //         .then(res => alert(res.data.message));
-        //     redirect('http://localhost:8000/');
-        // }
-        // else {
-        //     alert("No feild should be empty");
-        // }
     }
 
     return (
         <div className='parkinson-wrp'>
+            <div className='Note'><p>The below user input dataset is fed into the ML Model using flask server which further predicts (using svm (SUPPORT VECTOR MACHINE) model) that the patient has this disease or not with an accuracy percentage of 87.19%.
+                </p></div>
             <h1>Parkinson's disease prediction using ML</h1>
-              <div className="heart-form">
+            <div className="heart-form">
                 <div className="form-control">
                     <span>MDVP:Fo(Hz)</span>
-                    <input type="number" />
+                    <input type="number" name='m1' value={user.m1
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>MDVP:Fhi(Hz)</span>
-                    <input type="number" />
+                    <input type="number" name='m2' value={user.m2
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>MDVP:Flo(Hz)</span>
-                    <input type="number" />
+                    <input type="number" name='m3' value={user.m3
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>MDVP:jitter(%)</span>
-                    <input type="number" />
+                    <input type="number" name='m4' value={user.m4
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>MDVP:jitter(Abs)</span>
-                    <input type="number" />
+                    <input type="number" name='m5' value={user.m5
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>MDVP:RAP</span>
-                    <input type="number" />
+                    <input type="number" name='m6' value={user.m6
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>MDVP:PPQ</span>
-                    <input type="number" />
+                    <input type="number" name='m7' value={user.m7
+                    } onChange={handleChange
+                    }/>
+                </div>
+                <div className="form-control">
+                    <span>Jitter:DDP</span>
+                    <input type="number" name='jd' value={user.jd
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>MDVP:Shimmer</span>
-                    <input type="number" />
+                    <input type="number" name='m8' value={user.m8
+                    } onChange={handleChange
+                    }/>
+                </div>
+                <div className="form-control">
+                    <span>MDVP:Shimmer(dB)</span>
+                    <input type="number" name='m9' value={user.m9
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>Shimmer:APQ3</span>
-                    <input type="number" />
+                    <input type="number" name='sa3' value={user.sa3
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>Shimmer:APQ5</span>
-                    <input type="number" />
+                    <input type="number" name='sa5' value={user.sa5
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>MDVP:APQ</span>
-                    <input type="number" />
+                    <input type="number" name='m10' value={user.m10
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>Shimmer:DDA</span>
-                    <input type="number" />
+                    <input type="number" name='sd' value={user.sd
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>NHR</span>
-                    <input type="number" />
+                    <input type="number" name='nhr' value={user.nhr
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>HNR</span>
-                    <input type="number" />
+                    <input type="number" name='hnr' value={user.hnr
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>RPDE</span>
-                    <input type="number" />
+                    <input type="number" name='rpde' value={user.rpde
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>DFA</span>
-                    <input type="number" />
+                    <input type="number" name='dfa' value={user.dfa
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>Spread1</span>
-                    <input type="number" />
+                    <input type="number" name='s1' value={user.s1
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>Spread2</span>
-                    <input type="number" />
+                    <input type="number" name='s2' value={user.s2
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>D2</span>
-                    <input type="number" />
+                    <input type="number" name='d2' value={user.d2
+                    } onChange={handleChange
+                    }/>
                 </div>
                 <div className="form-control">
                     <span>PPE</span>
-                    <input type="number" />
+                    <input type="number" name='ppe' value={user.ppe
+                    } onChange={handleChange
+                    }/>
                 </div>
             </div>
-            <button className='heart-submit'>Parkinson's disease test Result</button>
-        {/* <div className="main-home">
-
-            <label class="custom-field two">
-                <input type="number" name="preg" value={user.preg} onChange={handleChange} placeholder="&nbsp;" />
-                <span class="placeholder">Number of Pregnancies</span>
-            </label>
-
-            <label class="custom-field two">
-                <input type="number" name='gl' value={user.gl} onChange={handleChange} placeholder="&nbsp;" />
-                <span class="placeholder">Glocose Level</span>
-            </label>
-
-            <label class="custom-field two">
-                <input type="number" name='bp' value={user.bp} onChange={handleChange} placeholder="&nbsp;" />
-                <span class="placeholder">Blood Pressure Level</span>
-            </label>
-
-            <label class="custom-field two">
-                <input type="number" name='skv' value={user.skv} onChange={handleChange} placeholder="&nbsp;" />
-                <span class="placeholder">Skin Thickness Value</span>
-            </label>
-
-            <label class="custom-field two">
-                <input type="number" name='il' value={user.il} onChange={handleChange} placeholder="&nbsp;" />
-                <span class="placeholder">Insulin Level</span>
-            </label>
-
-            <label class="custom-field two">
-                <input type="number" name='bmi' value={user.bmi} onChange={handleChange} placeholder="&nbsp;" />
-                <span class="placeholder">BMI value</span>
-            </label>
-
-            <label class="custom-field two">
-                <input type="number" name='dofv' value={user.dofv} onChange={handleChange} placeholder="&nbsp;" />
-                <span class="placeholder">Diabetes Oedigree Function value</span>
-            </label>
-
-            <label class="custom-field two">
-                <input type="number" name='age' value={user.age} onChange={handleChange} placeholder="&nbsp;" />
-                <span class="placeholder">Age of Person</span>
-            </label>
-
-            <button class="button" style={{ verticalAlign: "middle" }} onClick={submit}><span>Submit </span></button>
-
-        </div >
-        <section>
-            <div className='result-header'>
-                    Predicted value
-            </div>
-            <div className='result'>
-                {result}
-            </div>
-        </section> */}
+            <section onClick={submit} className='heart-submit'>
+                Parkinson's disease test Result = {result}
+            </section>
+            
         </div>
     )
 }

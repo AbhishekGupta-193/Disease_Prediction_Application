@@ -11,5 +11,6 @@ export const FormMain = ({page}) => {
       {page==='diabetes' && <Diabetes/>}
       {page==='parkinsons' &&  <Parkinsons/>}
     </div>
+    
   )
 }
